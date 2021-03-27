@@ -57,7 +57,7 @@ $(".saveBtn").on("click", function(){
     console.log("savetask",saveTask);    
 
     //object to save the task id and task content
-    taskObject = {date:currentDate,id:getTaskId,textValue:saveTaskText};
+    taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
     console.log("taskObject",taskObject);
 
     //push th eobject in the array
@@ -70,7 +70,7 @@ $(".saveBtn").on("click", function(){
 
 //when the user reloads the page
 
-$(window).on("load",function{
+$(window).on("load",function(){
 
     var reloadGetTask = JSON.parse(localStorage.getItem("workScheduler")) || [];
 
@@ -88,7 +88,7 @@ $(window).on("load",function{
             }
         }
         
-    })
+    });
 
-})
+});
 
