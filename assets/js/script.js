@@ -68,3 +68,17 @@ $(".saveBtn").on("click", function(){
 
 });
 
+//when the user reloads the page
+
+$(window).on("load",function{
+
+    var reloadGetTask = JSON.parse(localStorage.getItem("workScheduler")) || [];
+
+    if (reloadGetTask===[]){
+        return;
+    }
+
+    
+
+})
+
