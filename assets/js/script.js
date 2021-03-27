@@ -78,7 +78,17 @@ $(window).on("load",function{
         return;
     }
 
-    
+    $(".add-task").each(function(){
+
+        var taskId = $(this).attr("id");
+        for (var i=0;i<reloadGetTask.length;i++){
+            if (taskId === reloadGetTask[i].id){
+                $(this).text(reloadGetTask[i].textValue);
+                break;
+            }
+        }
+        
+    })
 
 })
 
