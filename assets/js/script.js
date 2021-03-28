@@ -28,13 +28,13 @@ $(".row").on("click",".add-task",function(){
     //save the edited time blocks id and class
     getTaskClass = $(this).attr("class");
     getTaskId = $(this).attr("id");
-    console.log(getTaskClass);
-    console.log(getTaskId);
+    //console.log(getTaskClass);
+    //console.log(getTaskId);
 
    if ($(this).text()!== ""){
         //get the text entered by the user
         taskText = $(this).text().trim();
-        console.log(taskText);
+        //console.log(taskText);
    } else {
        taskText = "";
    }
@@ -105,7 +105,7 @@ function saveTaskToLocal(){
     console.log("savetask",saveTask);    
 
     //object to save the task id and task content
-    taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
+    var taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
     console.log("taskObject",taskObject);
    
     //check if an existing task is being edited
