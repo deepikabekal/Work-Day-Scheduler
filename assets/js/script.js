@@ -68,21 +68,8 @@ $(".saveBtn").on("click", function(){
 
     $(this).prev().replaceWith(taskTd);  
 
-    //get the saved task from the local storage
-     saveTask = JSON.parse(localStorage.getItem("workScheduler")) || [];
-     console.log("savetask",saveTask);    
- 
-     //object to save the task id and task content
-     taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
-     console.log("taskObject",taskObject);
+    saveTaskToLocal();
     
-     //push th eobject in the array
-     saveTask.push(taskObject);
-     console.log(saveTask);
- 
-     //save the array in the local storage
-     localStorage.setItem("workScheduler", JSON.stringify(saveTask));
-
 });
 
 //when the user reloads the page
@@ -109,3 +96,29 @@ $(window).on("load",function(){
 
 });
 
+function saveTaskToLocal(){
+    //get the saved task from the local storage
+    saveTask = JSON.parse(localStorage.getItem("workScheduler")) || [];
+    console.log("savetask",saveTask);    
+
+    //object to save the task id and task content
+    taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
+    console.log("taskObject",taskObject);
+   
+    if (saveTask !== []){
+
+       for (var i=0;i<saveTask.length;i++){
+           if (getTaskId===saveTask[i].id){
+               saveTask.splice(i,1);
+               console.log(saveTask);
+           }
+       }
+    }
+    
+    //push th eobject in the array
+    saveTask.push(taskObject);
+    console.log(saveTask);
+
+    //save the array in the local storage
+    localStorage.setItem("workScheduler", JSON.stringify(saveTask));
+}
