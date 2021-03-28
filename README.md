@@ -50,22 +50,22 @@ THEN the saved events persist
 ```
 ## Code Logic
 * Time Blocks for displaying each hour from 9am to 5pm
-  * A <table> element followed by <tr> element for each time block. Each <tr> element includes 3 <td> elements to display the time, place to enter data and a save icon.
-  * Each <td> element where user can enter data has unique id.
+  * A table element followed by tr element for each time block. Each tr element includes 3 td elements to display the time, place to enter data and a save icon.
+  * Each td element where user can enter data has unique id.
 * Moment.js .hour() and .moment().format() methods to get the current time in hour and current date.
 * Display the current date on the page.
 * A for loop to check if the current time is present past or future.
    * If the time displayed in the row is equal to the current time then row will become red (present)
    * Else if the time displayed in the row is less than the current time then the row will become grey (past).
    * Else if the time displaed in the row is greater than the current time the row will become green (future).
-* An event listener to detect the user click on the <td> element (place where the user can enter data). The call back function does the following:
+* An event listener to detect the user click on the td element (place where the user can enter data). The call back function does the following:
    * Get the elements class and id attribute and save in respective variables.
    * Check if there is any text in the field. If yes save it in a variable and if not then store an empty string in the variable.
-   * Replace the <td> element with <textarea> element and add the class and id to it.
+   * Replace the td element with <textarea> element and add the class and id to it.
 * An event listener to detect save icon click. The call back function does the following:
    * Get the text in the <textarea> element and save it in a variable.
    * Check if the variable is empty. If yes then send an alert to the user to enter valid data and return from the function.
-   * Replace the <textarea> element with <td> element and add the classes and id to it.
+   * Replace the textarea element with td element and add the classes and id to it.
    * Call a function to save the data in the local storage.
 * A function to save the data to localstorage. It does the following:
    * Get the data from the local storage or an empty array and save it in an array variable.
@@ -81,7 +81,7 @@ THEN the saved events persist
    * Loop through each row. The call back function does the following:
       * Save the row id in a variable.
       * A for loop to iterate through all the elements in the array.
-      * Inside the for loop, check if the row id is equal to the id in the array. If yes then display the text corresponding to the id in the <td> element for the user data and break.
+      * Inside the for loop, check if the row id is equal to the id in the array. If yes then display the text corresponding to the id in the td element for the user data and break.
 
 ## References
 * Study Material for HTML, CSS and javascript provided by Trilogy Education Services.
