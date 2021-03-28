@@ -32,6 +32,7 @@ textarea{
   flex-direction: column;
 }
 
+/* style for the rows in the table */
 .row {
   white-space: pre-wrap;
   height: 80px;
@@ -40,6 +41,7 @@ textarea{
   justify-content: space-between; 
 }
 
+/* styles for the hour of the day td element */
 .hour {
   background-color: #ffffff;
   color: #000000;
@@ -47,6 +49,7 @@ textarea{
   width: 40px;
 }
 
+/* styles to represent past, present and future */
 .past {
   background-color: #d3d3d3;
   color: black;
@@ -63,6 +66,7 @@ textarea{
   color: black;
 }
 
+/* styles for saving the event added */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -80,12 +84,13 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
-
+/* save icon  */
 .icon{
   align-self: center;
   
 }
 
+/* styles for the td element for adding the task */
 .add-task{
   width: 87%;
   overflow: hidden;

@@ -2,8 +2,8 @@ var timeOfTheDay = moment().hour(); //get current time in hour
 var currentDate = moment().format("dddd, Do MMMM YYYY"); //get the current date
 var getTaskClass = ""; //get the class of the task saved
 var getTaskId = ""; //get the id of the task saved
-var taskText = "";
-var saveTask = [];
+var taskText = ""; //get the text entered by the user
+var saveTask = []; //array to save the contents of the local storage
 
 //display current date
 $("#currentDay").text(currentDate);
@@ -39,7 +39,7 @@ $(".row").on("click",".add-task",function(){
        taskText = "";
    }
 
-   console.log(taskText);
+   
     //change td element to textarea
     var textInput = $("<textarea>").addClass(getTaskClass).val(taskText);
     textInput.attr("id",getTaskId);
@@ -82,6 +82,7 @@ $(window).on("load",function(){
         return;
     }
 
+    //display the saved events from the local storage
     $(".add-task").each(function(){
 
         var taskId = $(this).attr("id");
@@ -96,6 +97,8 @@ $(window).on("load",function(){
 
 });
 
+//function for saving the task to the local storage
+
 function saveTaskToLocal(){
     //get the saved task from the local storage
     saveTask = JSON.parse(localStorage.getItem("workScheduler")) || [];
@@ -105,6 +108,8 @@ function saveTaskToLocal(){
     taskObject = {date:currentDate,id:getTaskId,textValue:taskText};
     console.log("taskObject",taskObject);
    
+    //check if an existing task is being edited
+    //if yes then replace it in the local storage with the new text
     if (saveTask !== []){
 
        for (var i=0;i<saveTask.length;i++){
