@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-A work day scheduler that allows the user to add tasks/events for each hour of the business hour (9am-5pm). This application allows the user to manage time effectively.
+A work day scheduler that allows the user to add tasks/events for each hour (9am-5pm). This application allows the user to manage time effectively.
 
 ## Website
 https://deepikabekal.github.io/Work-Day-Scheduler/
